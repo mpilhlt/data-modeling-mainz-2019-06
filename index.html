@@ -1,0 +1,802 @@
+<!doctype html>
+
+<html lang="de">
+<head>
+    <title>Datenmodellierung in der Rechtsgeschichte</title>
+
+    <!-- meta information -->
+    <meta name="author" content="Andreas Wagner" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+
+    <!-- favicons -->
+    <link rel="shortcut icon" href="resources/img/favicon.png" />
+    <link rel="apple-touch-icon" href="resources/img/apple-touch-icon.png" />
+
+    <!-- fonts -->
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,700,600,600italic,400italic,700italic,800,800italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css" />
+
+    <!-- CSS reset and grid -->
+    <link href="vendor/normalize/normalize-4.1.1.css" rel="stylesheet" />
+    <link href="vendor/skeleton/skeleton-2.0.4.css" rel="stylesheet" />
+
+    <!-- styles for included libraries -->
+    <link rel="stylesheet" href="extras/highlight/styles/github.css">
+
+    <!-- mermaid -->
+    <link rel="stylesheet" href="extras/mermaid/mermaid.forest.css">
+
+<!--
+    <!-/- chartist -/->
+    <link rel="stylesheet" href="vendor/chartist/chartist.min-0.9.7.css" />
+-->
+
+    <!-- codemirror -->
+    <link rel="stylesheet" href="vendor/codemirror/lib/codemirror.css" />
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="vendor/highlight/styles/default.css" />
+    <link rel="stylesheet" href="resources/css/hljs.linenumbering.css" />
+
+    <!-- magnific popup -->
+    <link rel="stylesheet" href="vendor/magnific-popup/magnific-popup-1.1.0.css" />
+
+    <!-- standard presentation styles -->
+    <link href="resources/css/style.css" rel="stylesheet" />
+
+    <!-- custom presentation styles -->
+    <link href="resources/css/custom.css" rel="stylesheet" />
+
+    <!-- js needed in head -->
+
+    <!-- greuler -->
+    <script src="vendor/d3/d3-3.5.6.js"></script>
+    <script src="vendor/cola/cola.v3.min.js"></script>
+    <script src="vendor/greuler/greuler-0.5.5.min.js"></script>
+
+    <!-- html5 dataset shim for IE -->
+    <script src="vendor/impress/html5-dataset.js" type="text/javascript"></script>
+
+</head>
+
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress" data-transition-duration="750">
+
+    <div class="step slide" id="title" data-x="0" data-y="0">
+        <h4><strong>2019-06-26</strong> | <a class="green" href="https://www.ieg-mainz.de/">IEG Mainz</a></h4>
+        <h4><strong class="small"><a class="green" href="https://www.hs-mainz.de/event/calendar/2019/06/26/event/tx_cal_phpicalendar/ringvorlesung-im-sose-2019-9/">Ringvorlesung Digitale Methodik in den Geistes- und Kulturwissenschaften</a></strong></h4>
+
+        <h1 class="down-100">Datenmodellierung in der Rechtsgeschichte</h1>
+
+        <h4 class="down-100">
+            <strong>Slides:</strong>
+            <a href="https://rg-mpg-de.github.io/data-modeling-mainz-2019-06/" title="Präsentation online betrachten">https://rg-mpg-de.github.io/data-modeling-mainz-2019-06/</a>
+        </h4>
+
+        <h5>
+            <strong><a class="green" href="https://www.rg.mpg.de/wagner">Andreas Wagner</a></strong> |
+            <img src="resources/img/twitter_bird_logo_2012.svg" alt="Twitter" class="twitter-icon" />
+                <a class="green" href="https://twitter.com/anwagnerdreas" title="Andreas on Twitter">@anwagnerdreas</a> |
+            <img src="resources/img/octicons-mark-github.svg" alt="Github" class="gh-icon" />
+                <a class="green" href="https://github.com/rg-mpg-de" title="MPIeR on GitHub">rg-mpg-de</a> |
+                <a class="green" href="https://creativecommons.org/licenses/by/4.0/">CC-BY 4.0</a><br/>
+        </h5>
+    </div>
+
+    <div class="step slide" id="intro" data-rel-x="1000" data-y="0">
+        <header>
+            <h1>Einleitung</h1>
+        </header>
+        <main>
+            <h2>Was wären genuin rechtshistorische Datenmodelle?</h2>
+            <ul>
+                <li>Werkstattbericht. (Warum ich?)</li>
+                <li>Historische Dm.</li>
+                <li><i>Rechts</i>historische Dm.</li>
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_samples">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <p>Was suchen (Rechts-)Historiker*innen "hinter" dem Text?</p>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_t">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Rechtstheorie</h2>
+        </header>
+        <main>
+            <h2>Rechtsnormen</h2>
+            <dl>
+                <dt>Kelsen</dt>
+                    <dd>Typen von Normen (Gebot, Erlaubnis, Ermächtigung, ...)</dd>
+                <dt>Hart</dt>
+                    <dd>Primäre/Sekundäre Normen</dd>
+                <dt>Hohfeld</dt>
+                    <dd>Typen von Rechten</dd>
+                <dt>Alexy</dt>
+                <dt>Bentham</dt>
+                <dt>...</dt>
+            </dl>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_p">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Rechtspraxis</h2>
+        </header>
+        <main>
+            <h2>Soziale Praxis</h2>
+            <p><strong>Was</strong> wird <strong>wie regelmäßig</strong>, <strong>mit welchen
+                Mitteln</strong>, <strong>wem gegenüber</strong> reklamiert oder durchgesetzt?
+            </p>
+            <p><i>(Rechtstheorie: "Funktionale Perspektive" auf Recht.<br/>
+                Viele Wissensbestände nötig: Weltwissen, normatives W., reaktives W., kreatives W. usw.)</i>
+            </p>
+        </main>
+    </div>
+
+    <div class="step slide" id="intro_toc">
+        <header>
+            <h1>Einleitung</h1>
+            <h2>Übersicht</h2>
+        </header>
+        <main>
+            <ol>
+                <li>Text-Markup</li>
+                <li>Ontologien</li>
+                <li>Vokabulare/Taxonomien/Thesauri</li>
+            </ol>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte">
+        <main>
+            <h1 class="green">01</h1>
+            <h2 class="line-height-one-five">
+                Text-Markup
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="texte_ssrq_1">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>SSRQ</h2>
+        </header>
+        <main>
+            <p><a href="https://www.ssrq-sds-fds.ch/exist/apps/ssrq/" target="_blank">https://www.ssrq-sds-fds.ch/exist/apps/ssrq/</a></p>
+            <h2>"Das Übliche"</h2>
+            <ul>
+                <li>Struktur-Markup</li>
+                <li>Normalisierung</li>
+                <li>Auszeichnung und Verlinkung von
+                    <ul>
+                        <li>Personen <i>(→ Personenkatalog)</i></li>
+                        <li>Orten <i>(→ Gazetteer)</i></li>
+                        <li>Ereignissen</li>
+                        <li><i>Konzepten (→ Thesaurus)</i></li>
+                    </ul>
+                </li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_ssrq_2">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>SSRQ</h2>
+        </header>
+        <main>
+            <p><a href="https://www.ssrq-sds-fds.ch/exist/apps/ssrq/" target="_blank">https://www.ssrq-sds-fds.ch/exist/apps/ssrq/</a></p>
+            <h2><i>Rechts</i>phänomene?</h2>
+            <ul>
+                <li>Art des Rechtsakts</li>
+                <li>Jurisdiktion</li>
+                <li>Normgeber</li>
+                <li>Beziehung zu anderen Rechtsakten</li>
+                <li>Rechtsfolgen</li>
+            </ul>
+            <h2 style="visibility:hidden;">Alles als "Konzept"</h2>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_ssrq_3" data-rel-x="0">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>SSRQ</h2>
+        </header>
+        <main>
+            <p><a href="https://www.ssrq-sds-fds.ch/exist/apps/ssrq/" target="_blank">https://www.ssrq-sds-fds.ch/exist/apps/ssrq/</a></p>
+            <h2><i>Rechts</i>phänomene?</h2>
+            <ul>
+                <li>Art des Rechtsakts</li>
+                <li>Jurisdiktion</li>
+                <li>Normgeber</li>
+                <li>Beziehung zu anderen Rechtsakten</li>
+                <li>Rechtsfolgen</li>
+            </ul>
+            <h2 class="green">Alles als "Konzept"</h2>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_weitere" data-rel-x="1000">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>Weitere</h2>
+        </header>
+        <main>
+            <h2>Weitere rechthistorische Beispiele</h2>
+            <ul>
+                <li><a href="https://www.ssrq-sds-fds.ch/exist/apps/ssrq/" target="_blank">Sammlung Schweizerischer Rechtsquellen</a></li>
+                <li><a href="https://www.oldbaileyonline.org/browse.jsp?foo=bar&path=sessionsPapers/17240708.xml&div=t17240708-6&xml=yes" target="_blank">Old Bailey Online</a></li>
+                <li><a href="http://tlrr.blackmesatech.com/2016/01/balbus.xhtml" target="_blank">Trials of the Late Roman Republic</a></li>
+                <li><a href="http://dev2.hab.de/edoc/view.html?id=edoc_ed000245_1527_constjoachimica" target="_blank">Constitutio Joachimica (1527)</a></li>
+                <li><a href="https://drw-www.adw.uni-heidelberg.de/drqedit-cgi/zeige?index=siglen&term=frankfurtref.+1509&firstterm=frankfurtref.+1509" target="_blank">Frankfurter Reformation (DRQEdit)</a></li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_q">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>Fragen</h2>
+        </header>
+        <main>
+            <h2>Aktuelle Entwicklungen</h2>
+            <ul>
+                <li>Linguistische Interessen (<a href="https://www.clarin.eu/blog/clarin-parlaformat-workshop" target="_blank">teiParla</a>)</li>
+                <li>Sentiment analysis, Sprach- und Sozialgeschichte</li>
+                <li>TEI &lt;drama>, &lt;meeting>, &lt;u> (<a href="https://tei-c.org/release/doc/tei-p5-doc/en/html/TS.html" target="_blank">speech</a>)</li>
+            </ul>
+            <h2>Fragen</h2>
+            <ul>
+                <li><i>Place</i> oder <i>Org</i></li>
+                <li><i>Person</i> oder <i>"Role"</i> (auch in Erwähnungen)</li>
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_1">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>Akoma Ntoso</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <p>Ein XML-Standard für beliebige Rechtsdokumente in parlamentarischen Prozessen und Justiz-Institutionen</p>
+            <ul>
+                <li>Seit 2004/05 entwickelt, jetzt internat. Standard (UN/AU/OASIS)</li>
+                <li>Ziele: Nachhaltigkeit, Interchange</li>
+                <li>Einbindung in den Workflow / DMS von rechtsetzenden Institutionen</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_2">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>Akoma Ntoso</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <p>Ein XML-Standard für beliebige Rechtsdokumente in parlamentarischen Prozessen und Justiz-Institutionen</p>
+            <ol>
+                <li>Schema/Dokumentmodell</li>
+                <li>Namenskonvention</li>
+                <li>(minimale) Ontologie</li>
+            </ol>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_3">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>AKN - Schema</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <h3>Schema</h3>
+            <ul>
+                <li>Trennung von autorativem Text und editorischen Beimengungen</li>
+                <li>Dokumentebenen: Text, Struktur, Metadata, Ontologie, Regeln</li>
+                <li>Abgestufte AKN-Compliance</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_4">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>AKN - NC</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <h3>Naming Convention</h3>
+            <ul>
+                <li>Benennung von Dokumenten, Abschnitten, referenzierten Entitäten</li>
+                <li>Verwaltung von Gültigkeit (Jurisdiktion, Versionen, Derogation)</li>
+                <li>FRBR</li>
+                <li>IRIs</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_5">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>AKN - Ontology</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <h3>Top-Level Concepts</h3>
+            <dl>
+                <dt>Document Classes</dt><dd>Work, Expression, Manifestation, Item</dd>
+                <dt>Non-Document Classes</dt><dd>Person, Organization, Concept, Object, Event,
+                    Location, Process, Term, Role, Reference</dd>
+            </dl>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_6">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>AKN - Sample</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <p>Beispiele</p>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_akn_q">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>AKN - Fragen</h2>
+        </header>
+        <main>
+            <h2>Akoma Ntoso</h2>
+            <h3>offene Fragen</h3>
+            <ul>
+                <li>Wo gibt es Definitionen für Konzepte oder (hist.) Jurisdiktionen?</li>
+                <li>Wie historische (indirekte) Überlieferung behandeln?</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="texte_vgl">
+        <header>
+            <h1>Text-Markup</h1>
+            <h2>TEI vs AKN</h2>
+        </header>
+        <main>
+            <h2>Vergleich</h2>
+            <h3>Vorteile AKN</h3>
+            <ul>
+                <li>Ebenentrennung</li>
+                <li>Rechtsstatus d. Dokumente transparent</li>
+                <li>Rechtstexte liegen z.T. so vor</li>
+            </ul>
+            <h3>Vorteile TEI</h3>
+            <ul>
+                <li>Tooling (FOSS)</li>
+                <li>Bei Bedarf detaillierter</li>
+            </ul>
+            <h3>Bei beiden offen</h3>
+            <ul>
+                <li>(absichtlich) semantisch dürftig</li>
+            </ul>
+       </main>
+    </div>
+
+
+
+
+    <div class="step slide" id="ontologies">
+        <main>
+            <h1 class="green">02</h1>
+            <h2 class="line-height-one-five">
+                Ontologien
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_dbs">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>Datenbanken</h2>
+        </header>
+        <main>
+            <h2>Rechtshistorische Datenbanken</h2>
+            <ul>
+                <li><a href="https://www.rg.mpg.de/forschung/repertorium-der-policeyordnungen" target="_blank">Repertorium der Policeyordnungen</a></li>
+                <li><a href="https://www.rg.mpg.de/forschung/die_regierung_der_universalkirche" target="_blank">Protokolle der Trienter Konzilskongregation</a></li>
+                <li><a href="https://scholar.princeton.edu/kewhitt/judicial-review-congress-database" target="_blank">Judicial Review of Congress Database</a></li>
+            </ul>
+            <p>Nötig ist jeweils ein Dokument, in dem die Datenfelder erklärt werden. Maschinell lesbar ist auch dieses nicht.</p>
+       </main>
+    </div>
+
+    <div class="step slide" id="ontologies_o">
+        <header>
+            <h1>Ontologien</h1>
+        </header>
+        <main>
+            <h2>Ontologien</h2>
+            <p>Eine <strong>Ontologie</strong> ist eine formale, explizite Spezifikation einer geteilten, abstrakten und vereinfachten Konzeptualisierung der Welt.</p>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_cidoccrm">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>CIDOC CRM</h2>
+        </header>
+        <main>
+            <h2>CIDOC CRM</h2>
+            <ul>
+                <li>mächtiger, offener, geisteswissenschaftlich akzeptierter Standard</li>
+                <li>stammt aus dem Bereich der Gedächtnisinstitutionen<br/>
+                    → spez. Nähe/Distanz zu hist. Forschung</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="ontologies_cidoccrm_2">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>CIDOC CRM</h2>
+        </header>
+        <main>
+            <h2>CIDOC CRM</h2>
+            <h3>Offene Punkte</h3>
+            <ul>
+                <li>Vorh. Rechtsbegriffe modellieren lediglich Eigentum bzw. Provenienz</li>
+                <li>Fehlt: Argumentation und Diskurs (aktuell: CRMinf)</li>
+                <li>Fehlt: Narrative Strukturen (aktuell:
+                    <a href="http://dataforhistory.org/" target="_blank">Data for History Consortium</a>)</li>
+                <li>Fehlt: Kontrafaktische Szenarien</li>
+            </ul>
+       </main>
+    </div>
+
+    <div class="step slide" id="ontologies_alt">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>Alternativen</h2>
+        </header>
+        <main>
+            <h2>Alternative Ontologien</h2>
+            <ul>
+                <li>Seit über 20 Jahren werden Rechts-Ontologien entwickelt</li> 
+                <li>Es gibt unzählige Ontologien in der Rechtspraxis</li>
+                <li>Sie sind stark von ihrem Zweck geprägt:
+                    <ul>
+                        <li>Entscheidungshilfe (f. Richter*innen oder autonome Fahrzeuge)</li>
+                        <li>Argumentationshilfe (f. Streitparteien)</li>
+                        <li>Kontrolle von Umsetzung und Normenbefolgung</li>
+                        <li>Rechtszusammenhänge übersetzen und vergleichen</li>
+                        <li>Domäne besser verstehen (Rechtstheorie)</li>
+                    </ul>
+                </li>
+                <li>(→ Unterscheidung Top-, Core-, Domain-Ontologien)</li>
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_lkif">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>LKIF Core</h2>
+        </header>
+        <main>
+            <h2>LKIF Core (2006)</h2>
+            <ul>
+                <li>OWL 2 DL</li>
+                <li>+ Regeln, + Frameworks</li>
+                <li>Core Ontology</li>
+                <li>11 Module in 3 Ebenen</li>
+                <li>Ausführliche Klassendefinitionen</li> 
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_lkif_2">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>LKIF Core</h2>
+        </header>
+        <main>
+            <div class="mfp-gallery">
+                <a class="green" href="resources/img/lkif1.png">
+                    <img style="height:500px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif1.png"
+                         alt="Layers"/>
+                </a>
+                <a class="green" href="resources/img/lkif2.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif2.png"
+                         alt="Place and Mereology"/>
+                </a>
+                <a class="green" href="resources/img/lkif3.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif3.png"
+                         alt="Actions, Agents, Organisations"/>
+                </a>
+                <a class="green" href="resources/img/lkif4.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif4.png"
+                         alt="Roles"/>
+                </a>
+                <a class="green" href="resources/img/lkif5.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif5.png"
+                         alt="Propositions, Attitudes, Expressions"/>
+                </a>
+                <a class="green" href="resources/img/lkif6.png">
+                    <img style="height:5px;float:left;border:1px solid #7ca6a6;box-shadow: 4px 4px 2px grey;"
+                         src="resources/img/lkif6.png"
+                         alt="Qualifications and Norms"/>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_allot">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>Allot</h2>
+        </header>
+        <main>
+            <h2>Allot (2015)</h2>
+            <p>A Light Legal Ontology on TLCs<br/>
+               (Proof-of-Concept), Basiert auf AKNs 14 Top Level Classes</p>
+            <ol>
+                <li>Allot Core
+                    <ul>
+                        <li>OWL 2 DL</li>
+                        <li>Integriert mit BFO, DOLCE</li>
+                        <li>alle Klassen selbst Instanzen von allot:Concept</li>
+                        <li>Values-in-Time-and-Context</li>
+                    </ul>
+                </li>
+                <li>Allot Implementation
+                    <ul>
+                        <li>Links und Importe von FOAF, BIO, LKIF</li>
+                    </ul>
+                </li>
+                <li>Allot Alignment
+                    <ul>
+                        <li>Modulare Verknüpfungen zu anderen Ontologien</li>
+                        <li>Durch Skos Matches, Alignment Ontologien, SPARQL Construct queries</li>
+                    </ul>
+                </li>
+            </ol>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_undo">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>Undo</h2>
+        </header>
+        <main>
+            <h2>Undo (2017)</h2>
+            <p>United Nations Document Ontology</p>
+            <ul>
+                <li>OWL 2 DL</li>
+                <li>Fokus auf Interchange</li>
+                <li>Mehrere Interpretationen (Annotationen) möglich</li>
+                <li>Erweiterungen vorgesehen, <i>in der ABOX</i></li>
+            </ul>
+        </main>
+    </div>
+
+    <div class="step slide" id="ontologies_vgl">
+        <header>
+            <h1>Ontologien</h1>
+            <h2>Vergleich</h2>
+        </header>
+        <main>
+            <h2>Diskussion</h2>
+            <h3>Allot/Undo</h3>
+            <ul>
+                <li>Isomorphism</li>
+                <li>Wünschenswert: Alignment Modul zu CIDOC</li>
+                <li>Wünschenswert: Erweiterung(en) f. historische Forschung
+                    <ul>
+                        <li>in der ABOX (Normvokabulare → Typisierung, Relationen)</li>
+                        <li>nötigenfalls mit alinierten LKIF/CIDOC</li>
+                    </ul>
+                </li>
+            </ul>
+        </main>
+    </div>
+
+
+
+    <div class="step slide" id="taxonomies">
+        <main>
+            <h1 class="green">03</h1>
+            <h2 class="line-height-one-five">
+                Taxonomien
+            </h2>
+        </main>
+    </div>
+
+    <div class="step slide" id="taxonomies_thes">
+        <header>
+            <h1>Taxonomien</h1>
+            <h2>Begrifflichkeit</h2>
+        </header>
+        <main>
+            <dl>
+                <dt>Vokabular/Lexikon</dt>
+                    <dd>enthält Wörter und deren Erklärungen</dd>
+                <dt>Thesaurus</dt>
+                    <dd>enthält - unsystematisch - Relationen zwischen Begriffen</dd>
+                <dt>Taxonomie</dt>
+                    <dd>besitzt hierarchische Systematik</dd>
+            </dl>
+        </main>
+    </div>
+
+    <div class="step slide" id="taxonomies_sample">
+        <header>
+            <h1>Taxonomien</h1>
+            <h2>Beispiele</h2>
+        </header>
+        <main>
+            <ul>
+                <li>EuroVoc</li>
+                <li>LISE/LegiVoc</li>
+                <li>JurWordNet</li>
+                <li>European Legal Taxonomy Syllabus</li>
+            </ul>
+            <p>Aktuell: "Bridge the gap" zwischen linguistischen und ontologischen Ressourcen</p>
+        </main>
+    </div>
+
+
+
+    <!--
+        
+        This is an example of step element being scaled.
+        
+        Again, we use a `data-` attribute, this time it's `data-scale="4"`, so it means that this
+        element will be 4 times larger than the others.
+        From presentation and transitions point of view it means, that it will have to be scaled
+        down (4 times) to make it back to its correct size.
+        
+    -->
+    <!--
+    <div id="title" class="step" data-x="0" data-y="0" data-scale="4">
+        <span class="try">then you should try</span>
+        <h1>impress.js<sup>*</sup></h1>
+        <span class="footnote"><sup>*</sup> no rhyme intended</span>
+    </div>
+    -->
+
+    <!--
+        
+        And the last one shows full power and flexibility of impress.js.
+        
+        You can not only position element in 3D, but also rotate it around any axis.
+        So this one here will get rotated by -40 degrees (40 degrees anticlockwise) around X axis and
+        10 degrees (clockwise) around Y axis.
+        
+        You can of course rotate it around Z axis with `data-rotate-z` - it has exactly the same effect
+        as `data-rotate` (these two are basically aliases).
+        
+    -->
+    <!--
+    <div id="its-in-3d" class="step" data-x="6200" data-y="4300" data-z="-100" data-rotate-x="-40" data-rotate-y="10" data-scale="2">
+        <p><span class="have">have</span> <span class="you">you</span> <span class="noticed">noticed</span> <span class="its">it’s</span> <span class="in">in</span> <b>3D<sup>*</sup></b>?</p>
+        <span class="footnote">* beat that, prezi ;)</span>
+    </div>
+    -->
+
+    <!--
+        
+        So to summarize of all the possible attributes used to position presentation steps, we have:
+        
+        * `data-x`, `data-y`, `data-z` - they define the position of **the center** of step element on
+            the canvas in pixels; their default value is 0;
+        * `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` - they define the rotation of
+            the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+            are exactly the same;
+        * `data-scale` - defines the scale of step element; default value is 1
+        
+        These values are used by impress.js in CSS transformation functions, so for more information consult
+        CSS transfrom docs: https://developer.mozilla.org/en/CSS/transform
+        
+    -->
+
+</div>
+
+<!--
+    This is a UI plugin. You can read more about plugins in src/plugins/README.md.
+    For now, I'll just tell you that this adds some graphical controls to navigate the
+    presentation. In the CSS file you can style them as you want. We've put them bottom right.
+-->
+<!--
+<div id="impress-toolbar"></div>
+-->
+
+<!--
+    
+    Hint is not related to impress.js in any way.
+    
+    But it can show you how to use impress.js features in creative way.
+    
+    When the presentation step is shown (selected) its element gets the class of "active" and the body element
+    gets the class based on active step id `impress-on-ID` (where ID is the step's id)... It may not be
+    so clear because of all these "ids" in previous sentence, so for example when the first step (the one with
+    the id of `bored`) is active, body element gets a class of `impress-on-bored`.
+    
+    This class is used by this hint below. Check CSS file to see how it's shown with delayed CSS animation when
+    the first step of presentation is visible for a couple of seconds.
+    
+    ...
+    
+    And when it comes to this piece of JavaScript below ... kids, don't do this at home ;)
+    It's just a quick and dirty workaround to get different hint text for touch devices.
+    In a real world it should be at least placed in separate JS file ... and the touch content should be
+    probably just hidden somewhere in HTML - not hard-coded in the script.
+    
+    Just sayin' ;)
+    
+-->
+<!--
+<div class="hint">
+    <p>Use a spacebar or arrow keys to navigate. <br/>
+       Press 'P' to launch speaker console.</p>
+</div>
+-->
+
+<script>
+if ("ontouchstart" in document.documentElement) { 
+    document.querySelector(".hint").innerHTML = "<p>Swipe left or right to navigate</p>";
+}
+</script>
+
+<!-- jquery -->
+<script src="vendor/jquery/jquery-1.11.0.min.js"></script>
+
+<!-- Extra modules
+     Load highlight.js, mermaid.js and impressConsole.js from extras.
+     If you're curious about details, these are initialized in src/plugins/extras/extras.js -->
+<script type="text/javascript" src="extras/highlight/highlight.pack.js"></script>
+<script type="text/javascript" src="extras/mermaid/mermaid.min.js"></script>
+
+<!-- highlight -->
+<script>hljs.initHighlightingOnLoad();</script>
+<script src="resources/js/hljs.linenumbering.js"></script>
+
+<!-- magnific popup -->
+<script src="vendor/magnific-popup/jquery.magnific-popup.min-1.1.0.js"></script>
+<script src="resources/js/magnific-popup.lightbox.js"></script>
+
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+
+</body>
+</html>
